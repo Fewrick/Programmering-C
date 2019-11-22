@@ -33,7 +33,11 @@ void draw() {
     text("Point:" + " " + samlet_point, 180, 440);
     if (samlet_point > 21) {
       textSize(70);
-      text("YOU LOSE!", 80, 300); 
+      text("YOU LOSE!", 80, 300);
+    }
+    if (samlet_point == 21) {
+      textSize(70);
+      text("YOU WIN!", 90, 300);
     }
   }
 }
