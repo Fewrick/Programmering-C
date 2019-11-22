@@ -16,10 +16,8 @@ String draw_kulor() {
   return kulor_;
 }
 
-void draw() {
-  frameRate(30);
-  rect(50, 425, 50, 50);
-  if ((mousePressed) && (49 < mouseX) && (mouseX < 101) && (424 < mouseY) && (mouseY < 476)) {
+void mousePressed() {
+  if ((49 < mouseX) && (mouseX < 101) && (424 < mouseY) && (mouseY < 476)) {
     clear();
     background(36, 255, 33);  
     textSize(32);
@@ -40,4 +38,9 @@ void draw() {
       text("YOU WIN!", 90, 300);
     }
   }
+}
+
+void draw() {
+  frameRate(60);
+  rect(50, 425, 50, 50);
 }
