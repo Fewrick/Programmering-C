@@ -13,11 +13,11 @@ void draw(){
 }
 
 void keyPressed(){
-  flueListe.add(new Flue());
+  flueListe.add(new Flue()); // opretter et nyt "flue" objekt til arraylisten
 }
 
 void mousePressed(){
-  flueListe.add(new Flue(mouseX, mouseY));
+  flueListe.add(new Flue(mouseX, mouseY)); // opretter et nyt "flue" objekt til arraylisten
 }
 
 /////////////////////////////////////////////////////////
@@ -40,7 +40,7 @@ class Flue{
   }
   
   void flyt(){
-    distanceFlyttet = distanceFlyttet + 0.5;
+    distanceFlyttet = distanceFlyttet + 0.5; // en forsat bevægelse af objektet
   }
 
   void tegnFlue(){
