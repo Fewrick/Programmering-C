@@ -19,6 +19,7 @@ void setup() {
   ellipseMode(RADIUS);
   ballX = width-100;
   ballY = height/2;
+
   xrect = 0;
   yrect = 0;
   wrect = width;
@@ -53,6 +54,4 @@ void draw() {
 
   fill(255, 255, 255);
   ellipse(ballX, ballY, rad, rad);
-
-
 }
