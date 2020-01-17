@@ -1,9 +1,10 @@
 float xpos;
 float ypos;
 float rad = 10;
-float speed = 2;
+float xspeed = 2;
+float yspeed = 2;
 float yposrect;
-int xdirection = 1;
+int xdirection = int(random(-2,2));
 int ydirection = 1;
 float rbarrier;
 float lbarrier;
@@ -37,8 +38,8 @@ void draw() {
   ellipse(xpos, ypos, rad, rad);
 
   // Ball physics
-  xpos = xpos + (speed * xdirection);
-  ypos = ypos + (speed * ydirection);
+  xpos = xpos + (xspeed * xdirection);
+  ypos = ypos + (yspeed * ydirection);
 
   // Ball wall collision
   if (xpos > width-rad || xpos < rad) {
@@ -51,8 +52,7 @@ void draw() {
   // Ball rect collision
   if ((ypos > yposrect-20) && (xpos > mouseX-50) && (xpos < mouseX + 50)) {
     ydirection *= -1;
-    speed = speed + 0.5;
-    point = point + 1;
+    xspeed = xspeed + 0.5;
   }
 
   // Score counter
@@ -67,5 +67,7 @@ void draw() {
     yposrect = 440;
     score = 0;
     point = 0;
+    xspeed = 2;
+    yspeed = 2;
   }
 }
