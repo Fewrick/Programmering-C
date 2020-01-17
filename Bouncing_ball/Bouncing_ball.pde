@@ -19,7 +19,6 @@ void setup() {
   ellipseMode(RADIUS);
   ballX = width-100;
   ballY = height/2;
-
   xrect = 0;
   yrect = 0;
   wrect = width;
@@ -29,7 +28,7 @@ void setup() {
 void draw() {
   background(185, 180, 180);
 
-
+  // Rectangle movement
   xrect = xrect + xrectspeed;
   yrect = yrect + yrectspeed;
   wrect = wrect - 2*xrectspeed;
@@ -39,17 +38,28 @@ void draw() {
   stroke(0, 0, 0);
   rect(xrect, yrect, wrect, hrect);
 
+  // Ball movement
   ballX = ballX + (xspeed*xdirection);
   ballY = ballY + (yspeed*ydirection);
 
-  println(xrect, yrect, wrect, hrect);
-
-  if (ballX > width-rad || ballX < rad) {
+  // Ball and rectangle collision
+  if (ballX < xrect+rad+3 || ballX > ((wrect + xrect)-rad)-3) {
     xdirection *= -1;
   }
 
-  if (ballY > height-rad || ballY < rad) {
+  if (ballY < yrect+rad+4 || ballY > ((hrect + yrect)-rad)-3) {
     ydirection *= -1;
+  }
+
+  // Rectangle size limitations
+  if (xrect > 250 || yrect > 250) {
+    xrect = 0;
+    yrect = 0;
+  }
+
+  if (wrect < 1 || hrect < 1) {
+    wrect = width;
+    hrect = height;
   }
 
   fill(255, 255, 255);
