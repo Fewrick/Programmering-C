@@ -25,7 +25,7 @@ class Knap {
 
   //funktion til knap 
   void klik() {
-    if (mousePressed && mouseX > 99 && mouseX < 801 && mouseY > 459 && mouseY < 509) {
+    if (mousePressed && mouseX > xPosition && mouseX < bredde +xPosition && mouseY > yPosition && mouseY < hojde +yPosition) {
       klikket = true;
     } else {
       klikket = false;
